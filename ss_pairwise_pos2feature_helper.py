@@ -16,24 +16,8 @@ import matplotlib.pyplot as plt
 
 import os
 import sys
-import getpass
-import uuid
-#For my all purpose code path
-mac_address = hex(uuid.getnode())#gives mac address of your computer(ex for my mac: 0x784f4391fc66, HP server: 0xcc47a69614bL)
-user_name = getpass.getuser()#gives your current system username
 
-if((mac_address=='0x784f4391fc66') & (user_name=='soumitra')):#for my mac
-    ss_lib_path = '/Users/soumitra/Documents/SS_CODE/SS_PYTHON/SS_PYLIBS/'
-    
-elif((mac_address=='0xcc47a69614bL') & (user_name=='samanta')):#for liverpool HP-server
-    ss_lib_path = '/media/big/samanta/SS_CODE/SS_PYTHON/SS_PYLIBS/'
-    
-elif os.path.exists('SS_PYLIBS/'):#for current folder
-    ss_lib_path = 'SS_PYLIBS/'
-    
-else:
-    raise ValueError('Add the soumitra all purpose ("SS_PYLIBS") code path with following:\n mac_address: {};\n user_name: {} ' .format(mac_address, user_name));
-    
+ss_lib_path = 'SS_PYLIBS/'
 sys.path.insert(0, ss_lib_path)
 #---------------------------------------------------------------------------------------------
 from ss_computation import *
